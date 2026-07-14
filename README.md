@@ -17,15 +17,13 @@ Legaltech es un prototipo educativo de asistente legal virtual para Perú. Usa u
    cd LegalTech
    ```
 
-2. Instala las dependencias (raíz, servidor y cliente):
+2. Instala las dependencias del backend:
 
    ```bash
-   npm install
    npm install --prefix server
-   npm install --prefix client
    ```
 
-3. Configura tu API key de Groq. El backend lee `GROQ_API_KEY` desde un archivo `.env` ubicado en `/server` (no en la raíz):
+3. Configura tu API key de Groq. El backend lee `GROQ_API_KEY` desde un archivo `.env` ubicado en `/server`:
 
    ```bash
    cp server/.env.example server/.env
@@ -48,47 +46,36 @@ Desde la raíz del proyecto:
 npm run dev
 ```
 
-Esto levanta en paralelo (con `concurrently`):
-
-- Backend (Express) en `http://localhost:4000`
-- Frontend (Vite) en `http://localhost:5173`
-
-El frontend usa un proxy de Vite (`/api` → `http://localhost:4000`), así que basta con abrir `http://localhost:5173` en el navegador.
+Esto levanta un único servidor Express en `http://localhost:4000`, que expone tanto la API (`/api/chat`, `/api/health`) como el frontend estático (HTML/CSS/JS). Abre `http://localhost:4000` en el navegador para usar la aplicación.
 
 ## Estructura de carpetas
 
 ```
 LegalTech/
-├── package.json              # Scripts raíz (dev, con concurrently)
+├── package.json          # Script raíz de conveniencia (dev -> server)
 ├── .gitignore
 ├── README.md
-├── server/                   # Backend Node.js + Express
-│   ├── index.js              # Servidor y endpoint POST /api/chat
-│   ├── systemPrompt.js       # Prompt del sistema del asistente legal
-│   ├── .env.example          # Variables de entorno de ejemplo
-│   ├── .env                  # Variables de entorno reales (no versionado)
+├── server/                # Backend Node.js + Express
+│   ├── index.js           # Servidor: sirve /client y expone POST /api/chat
+│   ├── systemPrompt.js    # Prompt del sistema del asistente legal
+│   ├── .env.example       # Variables de entorno de ejemplo
+│   ├── .env               # Variables de entorno reales (no versionado)
 │   └── package.json
-└── client/                   # Frontend React + Vite + Tailwind
-    ├── index.html
-    ├── vite.config.js
-    ├── tailwind.config.cjs
-    ├── public/
-    │   └── favicon.png
-    ├── src/
-    │   ├── main.jsx
-    │   ├── App.jsx           # Enrutamiento y layout general
-    │   ├── assets/            # Logo e imágenes
-    │   ├── pages/
-    │   │   ├── LandingPage.jsx  # Página de inicio (marketing)
-    │   │   └── ChatPage.jsx     # Página del asistente
-    │   └── components/
-    │       ├── Navbar.jsx
-    │       ├── Footer.jsx
-    │       ├── Chat.jsx         # Interfaz de chat
-    │       ├── ChatSidebar.jsx  # Panel lateral de contexto/aviso legal
-    │       └── icons.jsx        # Iconos SVG compartidos
-    └── package.json
+└── client/                # Frontend estático: HTML + CSS + JS (sin build, sin framework)
+    ├── index.html         # Landing page
+    ├── chat.html          # Página del asistente
+    ├── css/
+    │   └── style.css
+    ├── js/
+    │   ├── nav.js          # Menú móvil
+    │   └── chat.js         # Lógica del chat (fetch a /api/chat, render de mensajes)
+    └── assets/             # Logo, banner, favicon
 ```
+
+## Stack técnico
+
+- **Backend:** Node.js + Express, usando el SDK oficial `groq-sdk` para consumir el modelo `llama-3.3-70b-versatile` de Groq.
+- **Frontend:** HTML, CSS y JavaScript planos, sin frameworks ni paso de compilación. El mismo servidor Express sirve estos archivos estáticos, por lo que no hay que levantar un segundo proceso ni configurar un proxy.
 
 ## Notas importantes
 

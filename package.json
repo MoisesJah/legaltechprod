@@ -3,10 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
-    "start": "node server/index.js"
-  },
-  "devDependencies": {
-    "concurrently": "^8.0.0"
+    "dev": "npm run dev --prefix server",
+    "start": "npm start --prefix server"
   }
 }

@@ -1,13 +1,317 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <title>Legaltech - Asistente Legal Virtual</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Legaltech - Asistente Legal Virtual</title>
+</head>
+<body>
+  <header class="navbar">
+    <nav class="navbar-inner">
+      <a href="index.html" class="brand">
+        <img src="assets/logo.png" alt="Legaltech" />
+        Legaltech
+      </a>
+
+      <div class="nav-links">
+        <a class="nav-link" href="index.html#inicio">Inicio</a>
+        <a class="nav-link" href="index.html#areas">Áreas legales</a>
+        <a class="nav-link" href="index.html#como-funciona">Cómo funciona</a>
+        <a class="nav-link" href="index.html#aviso-legal">Aviso legal</a>
+        <a class="btn btn-dark" href="chat.html">Iniciar consulta</a>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+      </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a class="nav-link" href="index.html#inicio">Inicio</a>
+      <a class="nav-link" href="index.html#areas">Áreas legales</a>
+      <a class="nav-link" href="index.html#como-funciona">Cómo funciona</a>
+      <a class="nav-link" href="index.html#aviso-legal">Aviso legal</a>
+      <a class="btn btn-dark" href="chat.html">Iniciar consulta</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="hero-dots"></div>
+      <div class="hero-content">
+        <span class="badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="3" x2="12" y2="21" /><path d="M5 7h14" /><path d="M5 7 2 13a3 3 0 0 0 6 0L5 7Z" /><path d="M19 7l-3 6a3 3 0 0 0 6 0l-3-6Z" /></svg>
+          ASISTENTE LEGAL VIRTUAL PERUANO
+        </span>
+        <h1>Orientación legal clara, en lenguaje simple</h1>
+        <p class="lead">
+          Legaltech es un asistente virtual que responde consultas legales básicas sobre derecho
+          peruano: laboral, consumidor, arrendamiento y familia. Rápido, claro y gratuito.
+        </p>
+        <div class="hero-actions">
+          <a href="chat.html" class="btn btn-dark">
+            Iniciar consulta gratuita
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:1rem;height:1rem"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+          </a>
+          <a href="#aviso-legal" class="btn btn-outline">Leer aviso legal</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="areas" class="section section-gray">
+      <div class="container">
+        <h2>Áreas legales cubiertas</h2>
+        <p class="subtitle">
+          El asistente está orientado a un rango acotado de temas frecuentes en la vida cotidiana del ciudadano peruano.
+        </p>
+        <div class="grid-cards">
+          <div class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="2" /><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /><line x1="3" y1="13" x2="21" y2="13" /></svg>
+            </div>
+            <h3>Derecho laboral</h3>
+            <p>Contratos, despidos, vacaciones, beneficios sociales y hostigamiento en el trabajo.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1" /><circle cx="18" cy="20" r="1" /><path d="M2 3h2l2.4 12.2a2 2 0 0 0 2 1.8h8.6a2 2 0 0 0 2-1.6L21 8H6" /></svg>
+            </div>
+            <h3>Consumidor</h3>
+            <p>Reclamos por productos o servicios, garantías, publicidad engañosa y libro de reclamaciones.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5" /><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9" /></svg>
+            </div>
+            <h3>Arrendamiento</h3>
+            <p>Contratos de alquiler, desalojos, depósitos de garantía y obligaciones entre arrendador e inquilino.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3" /><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" /><circle cx="17" cy="9" r="2.5" /><path d="M15.5 14a5 5 0 0 1 5.5 5" /></svg>
+            </div>
+            <h3>Familia (básico)</h3>
+            <p>Nociones generales sobre alimentos, tenencia y régimen de visitas, sin sustituir asesoría especializada.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="usuarios" class="section">
+      <div class="container">
+        <h2>¿Para quién es Legaltech?</h2>
+        <p class="subtitle">
+          Pensado para personas que necesitan una primera orientación legal, sin barreras de costo ni de tiempo.
+        </p>
+        <div class="grid-cards">
+          <div class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3" /><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" /><circle cx="17" cy="9" r="2.5" /><path d="M15.5 14a5 5 0 0 1 5.5 5" /></svg>
+            </div>
+            <h3>Ciudadanía en general</h3>
+            <p>Personas con dudas legales cotidianas que no cuentan con los recursos para pagar un abogado desde el primer momento.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="2" /><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /><line x1="3" y1="13" x2="21" y2="13" /></svg>
+            </div>
+            <h3>Trabajadores</h3>
+            <p>Empleados que buscan entender sus derechos laborales antes de tomar una decisión o presentar un reclamo.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1" /><circle cx="18" cy="20" r="1" /><path d="M2 3h2l2.4 12.2a2 2 0 0 0 2 1.8h8.6a2 2 0 0 0 2-1.6L21 8H6" /></svg>
+            </div>
+            <h3>Consumidores</h3>
+            <p>Personas con reclamos por productos o servicios que desconocen qué proceso o entidad les corresponde.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5" /><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9" /></svg>
+            </div>
+            <h3>Inquilinos y arrendadores</h3>
+            <p>Personas con dudas sobre contratos de alquiler, depósitos de garantía y obligaciones entre las partes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="como-funciona" class="section section-gray">
+      <div class="container how-it-works">
+        <div>
+          <h2 style="text-align:left">Cómo funciona el proceso</h2>
+          <div class="steps">
+            <div class="step">
+              <div class="step-number">1</div>
+              <div>
+                <h3>Escribe tu consulta</h3>
+                <p>Describe tu situación legal en lenguaje simple, sin necesidad de conocer términos jurídicos.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">2</div>
+              <div>
+                <h3>Recibe una orientación clara</h3>
+                <p>El asistente responde en español, explicando conceptos generales de forma sencilla y estructurada.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">3</div>
+              <div>
+                <h3>Consulta a un abogado si lo necesitas</h3>
+                <p>Para casos complejos o de alto riesgo, el asistente te recomendará siempre acudir a un abogado colegiado.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mock-window">
+          <div class="mock-titlebar">
+            <span class="mock-dot red"></span>
+            <span class="mock-dot yellow"></span>
+            <span class="mock-dot green"></span>
+            <span class="label">INTERFAZ DE CONSULTA</span>
+          </div>
+          <div class="mock-body">
+            <div class="mock-bubble left">¡Hola! Soy tu asistente legal. ¿En qué puedo orientarte hoy sobre derecho peruano?</div>
+            <div class="mock-bubble right">Mi empleador no me ha pagado la liquidación después de 48 horas de haber renunciado. ¿Qué debo hacer?</div>
+            <div class="mock-bubble left">Según la ley peruana, el pago de beneficios sociales debe realizarse dentro de las 48 horas del cese. Te sugiero enviar una carta notarial requiriendo el pago o acudir a SUNAFIL para iniciar una conciliación.</div>
+          </div>
+          <div class="mock-input-row">
+            <div class="mock-input">Escribe tu consulta legal aquí...</div>
+            <div class="mock-send">Enviar</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="beneficios" class="section">
+      <div class="container">
+        <h2>Beneficios, limitaciones y mercado peruano</h2>
+        <p class="subtitle">
+          Legaltech no busca reemplazar al abogado, sino reducir la brecha de acceso a la información
+          legal básica en un contexto donde gran parte de la población no cuenta con asesoría accesible.
+        </p>
+
+        <div class="two-col">
+          <div class="panel good">
+            <div class="panel-title good">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+              Beneficios
+            </div>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>Acceso gratuito e inmediato a orientación legal básica</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>Disponible las 24 horas, sin necesidad de agendar cita</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>Lenguaje simple, sin tecnicismos jurídicos</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>Reduce la barrera inicial de acceso a la justicia</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>Ayuda a preparar mejor una consulta antes de ver a un abogado real</li>
+            </ul>
+          </div>
+
+          <div class="panel bad">
+            <div class="panel-title bad">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+              Limitaciones
+            </div>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>No sustituye la asesoría de un abogado colegiado</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>No garantiza precisión en artículos o normas específicas</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>No analiza documentos, contratos ni evidencia del caso</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>No debe usarse para decisiones de alto riesgo o con plazos judiciales</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>La calidad de la respuesta depende de cómo se formule la pregunta</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="market-box">
+          <h3>Aplicación práctica en el mercado legal peruano</h3>
+          <p>El modelo puede integrarse como una capa de orientación inicial dentro de distintos actores del ecosistema legal peruano:</p>
+          <div class="tag-list">
+            <span class="tag">Consultorios jurídicos gratuitos y clínicas legales universitarias</span>
+            <span class="tag">ONGs y programas de acceso a la justicia</span>
+            <span class="tag">Colegios de abogados, como herramienta de orientación previa</span>
+            <span class="tag">Estudios legales pequeños, como primer filtro de consultas frecuentes</span>
+            <span class="tag">Municipalidades y plataformas de atención al ciudadano</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-dark">
+      <div class="container cta-dark-inner">
+        <div>
+          <h2>¿Listo para resolver tus dudas?</h2>
+          <p>
+            Accede ahora a nuestro asistente virtual. Sin registros complicados, sin esperas.
+            Orientación inmediata sobre temas legales frecuentes en Perú.
+          </p>
+          <ul class="checklist">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>Gratuito, con fines educativos</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>Disponible 24/7</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>Basado en normativa peruana vigente</li>
+          </ul>
+          <a href="chat.html" class="btn btn-light" style="margin-top:2rem">Empezar ahora</a>
+        </div>
+
+        <div class="banner-card">
+          <img src="assets/legaltech-banner.png" alt="Legaltech - confianza institucional" />
+          <div class="banner-caption">
+            <p class="title">Confianza institucional</p>
+            <p class="subtitle">Desarrollado para facilitar el acceso a la justicia.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="aviso-legal" class="section">
+      <div class="container">
+        <div class="notice">
+          <div class="notice-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4" /><path d="M12 17h.01" /><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z" /></svg>
+          </div>
+          <div>
+            <h2>Aviso Legal</h2>
+            <p>
+              Legaltech es un <strong>prototipo educativo</strong> desarrollado con fines académicos.
+              Las respuestas generadas por el asistente virtual <strong>no constituyen asesoría legal
+              profesional</strong> y no reemplazan la consulta presencial con un abogado colegiado.
+            </p>
+            <p>
+              Para casos complejos, urgentes o de alto riesgo, siempre se recomienda acudir a un
+              profesional del derecho habilitado por el Colegio de Abogados.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="footer-brand">
+          <img src="assets/logo.png" alt="Legaltech" />
+          Legaltech
+        </a>
+        <p class="tagline">Legaltech · Proyecto académico/educativo · No sustituye la consulta con un abogado colegiado</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#aviso-legal">Aviso Legal</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+        <span id="year"></span>
+        <span>Impulsado por Llama 3.3 (Groq API)</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script>
+    document.getElementById('year').textContent = '© ' + new Date().getFullYear() + ' Legaltech Perú';
+  </script>
+</body>
 </html>
